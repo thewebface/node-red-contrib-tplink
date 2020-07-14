@@ -316,10 +316,10 @@ module.exports = function (RED) {
           promise = device.emeter.getRealtime()
           break
         case 'getMeterCurrentMonthDayStats':
-          promise = device.emeter.get_daystat(new Date().getFullYear(),new Date().getMonth())
+          promise = device.emeter.getDayStats(new Date().getFullYear(),new Date().getMonth())
           break
         case 'getMeterLastMonthDayStats':
-          promise = device.emeter.get_daystat(new Date().getFullYear()-(new Date().getMonth()===1),((new Date().getMonth())-1)%12)
+          promise = device.emeter.getDayStats(new Date().getFullYear()-(new Date().getMonth()===1),((new Date().getMonth())-1)%12)
           break
         case 'eraseStats':
           promise = device.emeter.eraseStats()
